@@ -12,5 +12,22 @@
         "leveldb",
         "upsert",
         "validators"
+    ],
+    "cSpell.ignoreWords": [
+        "connect",
+        "connection",
+        "const",
+        "create",
+        "export",
+        "index",
+        "mongo",
+        "mongoose",
+        "new",
+        "parser",
+        "promise",
+        "true",
+        "uri",
+        "url",
+        "use"
     ]
 }
