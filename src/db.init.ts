@@ -10,8 +10,7 @@ lme.i('> connecting to ' + MONGO_URI);
 // Promisifying all mongoose methods
 mongoose.Promise = BluePromise;
 
-export const mongooseConnectionPromise = mongoose.connect(
-  MONGO_URI, {
+export const mongooseConnectionPromise = mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
 });
