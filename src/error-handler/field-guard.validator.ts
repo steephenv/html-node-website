@@ -1,6 +1,7 @@
 import { Request } from 'express';
 import { RequestError, RequestErrorType } from './RequestError';
 
+// tslint:disable-next-line:interface-name
 interface InterfaceFieldGuard {
   limit: number;
   offset: number;

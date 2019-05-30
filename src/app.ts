@@ -6,7 +6,7 @@ import * as express from 'express';
 import * as logger from 'morgan';
 import * as path from 'path';
 import * as lme from 'lme';
-import * as favicon from 'serve-favicon';
+// import * as favicon from 'serve-favicon';
 import { ExpressRequestError, ExpressRequestErrorType } from 'issue-maker';
 
 // import { attachTokenData } from './access-control/attach-token-data';
@@ -60,7 +60,7 @@ app.use(
 );
 
 // un-comment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 import { UPLOAD_DIR } from './routes/utils/index';
 
