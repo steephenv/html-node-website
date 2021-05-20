@@ -53,7 +53,7 @@
     "got": "^9.3.0",
     "graphql": "^14.0.2",
     "graphql-type-json": "^0.2.1",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "issue-maker": "^1.0.1",
     "joi": "^14.0.2",
     "jsonwebtoken": "^8.3.0",
