@@ -56,7 +56,7 @@
     "html-pdf": "^2.2.0",
     "issue-maker": "^1.0.1",
     "joi": "^14.0.2",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "lme": "^1.5.3",
     "lodash": "^4.17.11",
     "mkdirp": "^0.5.1",
