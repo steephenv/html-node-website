@@ -6,6 +6,13 @@ export interface VisitDocument {
   region?: string;
   city?: string;
   timezone?: string;
+  lat?: number;
+  lng?: number;
+  isp?: string;
+  geoSource?: 'ipinfo' | 'geoip-lite';
+  browser?: string;
+  os?: string;
+  device?: string;
   path: string;
   referrer?: string;
   userAgent?: string;
@@ -19,6 +26,13 @@ const visitSchema = new Schema<VisitDocument>(
     region: { type: String },
     city: { type: String },
     timezone: { type: String },
+    lat: { type: Number },
+    lng: { type: Number },
+    isp: { type: String },
+    geoSource: { type: String, enum: ['ipinfo', 'geoip-lite'] },
+    browser: { type: String },
+    os: { type: String },
+    device: { type: String },
     path: { type: String, required: true, trim: true },
     referrer: { type: String, trim: true },
     userAgent: { type: String, trim: true },

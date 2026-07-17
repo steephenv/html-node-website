@@ -16,4 +16,5 @@ export const config = {
     .map(origin => origin.trim())
     .filter(Boolean),
   isProduction: process.env.NODE_ENV === 'production',
+  ipinfoToken: process.env.IPINFO_TOKEN || '',
 };
