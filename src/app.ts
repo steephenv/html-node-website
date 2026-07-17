@@ -3,10 +3,12 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { config } from './config';
 import { feedbackRouter } from './routes/feedback.routes';
+import { visitRouter } from './routes/visit.routes';
 import { errorHandler } from './middleware/error-handler';
 
 export const app = express();
 
+app.set('trust proxy', true);
 app.use(helmet());
 app.use(
   cors({
@@ -20,6 +22,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/feedback', feedbackRouter);
+app.use('/api/visits', visitRouter);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, message: 'Not found' });
