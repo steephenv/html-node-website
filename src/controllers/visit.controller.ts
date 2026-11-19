@@ -4,6 +4,7 @@ import { visitSchema } from '../validators/visit.validator';
 import { AppError } from '../errors/app-error';
 import { lookupGeo } from '../utils/geo-lookup';
 import { parseUserAgent } from '../utils/parse-user-agent';
+import { clientIp } from '../utils/client-ip';
 
 export const recordVisit: RequestHandler = async (req, res, next) => {
   try {
@@ -12,7 +13,7 @@ export const recordVisit: RequestHandler = async (req, res, next) => {
       throw new AppError(422, parsed.error.issues.map(issue => issue.message).join(', '));
     }
 
-    const ip = req.ip || '';
+    const ip = clientIp(req);
     const userAgent = req.get('user-agent');
     const [geo, ua] = await Promise.all([lookupGeo(ip), Promise.resolve(parseUserAgent(userAgent))]);
 

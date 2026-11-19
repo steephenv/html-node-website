@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
+import { clientIp } from '../utils/client-ip';
 import { requireAdmin } from '../middleware/require-admin';
 import { listVisitors, getVisitorVisits } from '../controllers/admin.controller';
 
@@ -12,6 +13,8 @@ adminRouter.use(
     limit: 120,
     standardHeaders: true,
     legacyHeaders: false,
+    // key on the real visitor IP (Cloudflare header), not the shared proxy hop
+    keyGenerator: req => clientIp(req),
   }),
 );
 adminRouter.use(requireAdmin);
