@@ -8,8 +8,9 @@ function digest(value: string): Buffer {
 }
 
 export const requireAdmin: RequestHandler = (req, res, next) => {
+  // No token configured: the admin API is open to anyone. Set ADMIN_TOKEN to lock it.
   if (!config.adminToken) {
-    return next(new AppError(503, 'Admin API is disabled (ADMIN_TOKEN not set)'));
+    return next();
   }
 
   const header = req.get('authorization') || '';

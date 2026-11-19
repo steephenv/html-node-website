@@ -17,6 +17,6 @@ export const config = {
     .filter(Boolean),
   isProduction: process.env.NODE_ENV === 'production',
   ipinfoToken: process.env.IPINFO_TOKEN || '',
-  // Bearer token for the read-only /api/admin endpoints. Admin API is disabled when unset.
+  // Optional bearer token for the read-only /api/admin endpoints. When unset they're public.
   adminToken: process.env.ADMIN_TOKEN || '',
 };
