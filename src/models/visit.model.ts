@@ -2,6 +2,7 @@ import { Schema, model } from 'mongoose';
 
 export interface VisitDocument {
   ip: string;
+  visitorId?: string;
   country?: string;
   region?: string;
   city?: string;
@@ -22,6 +23,7 @@ export interface VisitDocument {
 const visitSchema = new Schema<VisitDocument>(
   {
     ip: { type: String, required: true },
+    visitorId: { type: String, index: true },
     country: { type: String },
     region: { type: String },
     city: { type: String },
@@ -42,5 +44,7 @@ const visitSchema = new Schema<VisitDocument>(
     timestamps: { createdAt: true, updatedAt: false },
   },
 );
+
+visitSchema.index({ createdAt: -1 });
 
 export const Visit = model<VisitDocument>('Visit', visitSchema);

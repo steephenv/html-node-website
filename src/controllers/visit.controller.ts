@@ -18,6 +18,7 @@ export const recordVisit: RequestHandler = async (req, res, next) => {
 
     await Visit.create({
       ip,
+      visitorId: parsed.data.visitorId,
       country: geo.country,
       region: geo.region,
       city: geo.city,
